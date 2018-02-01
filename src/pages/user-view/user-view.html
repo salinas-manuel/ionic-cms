@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>User Details</ion-title>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content *ngIf="user">
+  <ion-list>
+    <ion-item>Username: {{user.username}}</ion-item>
+    <ion-item>Name: {{user.last_name}}, {{user.first_name}}</ion-item>
+    <ion-item>Email: {{user.email}}</ion-item>
+    <ion-item>ID: {{user._id}}</ion-item>
+  </ion-list>
+  <ion-fab top right>
+    <button ion-fab mini><ion-icon name="arrow-dropdown"></ion-icon></button>
+    <ion-fab-list>
+      <button ion-fab [navPush]="pushPage" [navParams]="user._id"><ion-icon name="create"></ion-icon></button>
+      <button ion-fab><ion-icon name="trash"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

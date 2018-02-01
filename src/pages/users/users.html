@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Users</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <button ion-item [navPush]="pushPage" [navParams]="user._id"
+      *ngFor="let user of users">
+      {{ user.username }}
+    </button>
+  </ion-list>
+</ion-content>
