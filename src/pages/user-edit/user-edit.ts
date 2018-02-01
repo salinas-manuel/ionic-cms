@@ -50,7 +50,8 @@ export class UserEditPage {
     }
 
     if(response.success===true){
-      this.pushPage = UserViewPage;
+      //this.pushPage = UserViewPage;
+      this.navCtrl.push(UserViewPage, response.user._id)
     }
   }
 
