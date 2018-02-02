@@ -30,15 +30,15 @@ export class UserProvider {
     return this.http.get<User>(this.url + `/view/${id}`);
   }
 
-  public createUser(): void{
-    console.log('Create Users');
+  public createUser(user: User): Observable<User> {
+    return this.http.post<User>(this.url + '/create', user, httpOptions)
   }
 
   public editUser(user: User): Observable<User> {
     return this.http.post<User>(this.url + '/edit', user, httpOptions);
   }
 
-  public deleteUser(): void{
-    console.log('Delete Users');
+  public deleteUser(id:string): Observable<User> {
+    return this.http.get<User>(this.url + `/delete/${id}`);
   }
 }

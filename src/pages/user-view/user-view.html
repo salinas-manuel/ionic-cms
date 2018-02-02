@@ -15,11 +15,11 @@
     <ion-item>Email: {{user.email}}</ion-item>
     <ion-item>ID: {{user._id}}</ion-item>
   </ion-list>
-  <ion-fab top right>
-    <button ion-fab mini><ion-icon name="arrow-dropdown"></ion-icon></button>
-    <ion-fab-list>
+  <ion-fab bottom right>
+    <button ion-fab mini><ion-icon name="arrow-dropleft"></ion-icon></button>
+    <ion-fab-list side="left">
       <button ion-fab [navPush]="pushPage" [navParams]="user._id"><ion-icon name="create"></ion-icon></button>
-      <button ion-fab><ion-icon name="trash"></ion-icon></button>
+      <button ion-fab (click)="deleteUser(user._id)"><ion-icon name="trash"></ion-icon></button>
     </ion-fab-list>
   </ion-fab>
 </ion-content>

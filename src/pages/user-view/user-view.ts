@@ -26,7 +26,6 @@ export class UserViewPage {
   ionViewDidLoad() {
     const id = this.navParams.data;
     this.getUser(id);
-    console.log(id);
   }
 
   getUser(id): void {
@@ -37,12 +36,11 @@ export class UserViewPage {
     );
   }
 
-  /*deleteUser(id: string): void {
-    if(confirm("Are you sure you want to delete " + this.user.user.username)) {
-      this.userService.deleteUser(id).subscribe(
-        ()=>{this.router.navigate(['/users'])}
+  deleteUser(id: string): void {
+    this.userProvider.deleteUser(id).subscribe(
+      ()=>{this.navCtrl.push(UserViewPage)/*NEEDS WORK*/}
       );
-    }
-  }*/
+
+  }
 
 }

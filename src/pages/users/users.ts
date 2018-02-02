@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 import { UserProvider } from '../../providers/user/user';
 import { User } from '../../models/user';
 import { UserViewPage } from '../user-view/user-view';
+import { UserCreatePage } from '../user-create/user-create';
 
 /**
  * Generated class for the UsersPage page.
@@ -20,6 +21,7 @@ import { UserViewPage } from '../user-view/user-view';
 export class UsersPage {
 
   pushPage: any;
+  pushPage2: any;
   public users: User[];
   private loader:any;
 
@@ -35,6 +37,7 @@ export class UsersPage {
 
     this.pushPage = UserViewPage;
     //this.navParams.get()
+    this.pushPage2 = UserCreatePage;
   }
 
   public ionViewDidLoad() {
@@ -46,7 +49,6 @@ export class UsersPage {
     this.userProvider.getUsers().subscribe(
       (response) => {
         this.users = response.users,
-        console.log(this.users),
         this.loader.dismiss()
       }
     );

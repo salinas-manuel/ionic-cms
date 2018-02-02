@@ -9,6 +9,7 @@ import { ListPage } from '../pages/list/list';
 import { UsersPage } from '../pages/users/users';
 import { UserViewPage } from '../pages/user-view/user-view';
 import { UserEditPage } from '../pages/user-edit/user-edit';
+import { UserCreatePage } from '../pages/user-create/user-create';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,7 +23,8 @@ import { UserProvider } from '../providers/user/user';
     UsersPage,
     ListPage,
     UserViewPage,
-    UserEditPage
+    UserEditPage,
+    UserCreatePage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { UserProvider } from '../providers/user/user';
     UsersPage,
     ListPage,
     UserViewPage,
-    UserEditPage
+    UserEditPage,
+    UserCreatePage
   ],
   providers: [
     StatusBar,

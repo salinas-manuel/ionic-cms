@@ -15,4 +15,9 @@
       {{ user.username }}
     </button>
   </ion-list>
+    <ion-fab bottom right>
+      <button ion-fab mini [navPush]="pushPage2" [navParams]="">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-fab>
 </ion-content>
