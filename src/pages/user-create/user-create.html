@@ -1,0 +1,43 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Create a New User</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <form (ngSubmit)="onSubmit()" #createUser="ngForm">
+    <div *ngIf="errorMessage" class="alert error">{{errorMessage}}</div>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input [(ngModel)]="user.username" type="text" id="username" [ngModelOptions]="{standalone: true}"></ion-input>
+        <div class="error" *ngIf="errors.username">{{errors.username.message}}</div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input [(ngModel)]="user.email" type="text" id="email" [ngModelOptions]="{standalone: true}"></ion-input>
+        <div class="error" *ngIf="errors.email">{{errors.email.message}}</div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>First Name</ion-label>
+        <ion-input [(ngModel)]="user.first_name" type="text" id="first_name" [ngModelOptions]="{standalone: true}"></ion-input>
+        <div class="error" *ngIf="errors.username">{{errors.first_name.message}}</div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input [(ngModel)]="user.last_name" type="text" id="last_name" [ngModelOptions]="{standalone: true}"></ion-input>
+        <div class="error" *ngIf="errors.username">{{errors.last_name.message}}</div>
+      </ion-item>
+
+    </ion-list>
+
+  <button ion-button type="submit">Create</button>
+  </form>
+</ion-content>
